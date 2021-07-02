@@ -9,11 +9,11 @@ function App() {
   const[searchPokemon, setsearchPokemon] = useState('')
   const[namePokemon, setnamePokemon] = useState('')
   const[imgPokemon, setimgPokemon] = useState('')
-
+  
   useEffect(() => {
  
     if(searchPokemon){
-      let url = `https://pokeapi.co/api/v2/pokemon/${searchPokemon}`
+      let url = `https://pokeapi.co/api/v2/pokemon/${searchPokemon.toLowerCase()}`
       const fetchDataApi = async () => {
           const data = await fetch(url).then(response => response.json())
           setnamePokemon(data.name)
